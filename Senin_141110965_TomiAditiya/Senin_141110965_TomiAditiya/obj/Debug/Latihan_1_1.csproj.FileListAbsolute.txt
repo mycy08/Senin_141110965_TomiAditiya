@@ -9,3 +9,10 @@ G:\Framew\Senin_141110965_TomiAditiya\Senin_141110965_TomiAditiya\Senin_14111096
 D:\new\Senin_141110965_TomiAditiya\Senin_141110965_TomiAditiya\bin\Debug\Senin_141110965_TomiAditiya.exe.config
 D:\new\Senin_141110965_TomiAditiya\Senin_141110965_TomiAditiya\obj\Debug\Senin_141110965_TomiAditiya.exe
 D:\new\Senin_141110965_TomiAditiya\Senin_141110965_TomiAditiya\obj\Debug\Senin_141110965_TomiAditiya.pdb
+D:\new\Senin_141110965_TomiAditiya\Senin_141110965_TomiAditiya\bin\Debug\Senin_141110965_TomiAditiya.exe
+D:\new\Senin_141110965_TomiAditiya\Senin_141110965_TomiAditiya\bin\Debug\Senin_141110965_TomiAditiya.pdb
+D:\new\Senin_141110965_TomiAditiya\Senin_141110965_TomiAditiya\bin\Debug\MaterialSkin.dll
+D:\new\Senin_141110965_TomiAditiya\Senin_141110965_TomiAditiya\obj\Debug\Latihan_1_1.csprojResolveAssemblyReference.cache
+D:\new\Senin_141110965_TomiAditiya\Senin_141110965_TomiAditiya\obj\Debug\Latihan_1_1.Form1.resources
+D:\new\Senin_141110965_TomiAditiya\Senin_141110965_TomiAditiya\obj\Debug\Senin_141110965_TomiAditiya.Properties.Resources.resources
+D:\new\Senin_141110965_TomiAditiya\Senin_141110965_TomiAditiya\obj\Debug\Latihan_1_1.csproj.GenerateResource.Cache
