@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(menuBarang));
             this.mtubah = new MetroFramework.Controls.MetroTile();
             this.mthapus = new MetroFramework.Controls.MetroTile();
             this.mttambah = new MetroFramework.Controls.MetroTile();
@@ -47,6 +48,7 @@
             this.mtubah.Text = "Ubah";
             this.mtubah.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mtubah.UseSelectable = true;
+            this.mtubah.Click += new System.EventHandler(this.mtubah_Click);
             // 
             // mthapus
             // 
@@ -104,6 +106,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(614, 230);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // menuBarang
             // 
@@ -116,6 +119,7 @@
             this.Controls.Add(this.mttambah);
             this.Controls.Add(this.mlrefresh);
             this.Controls.Add(this.mlback);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "menuBarang";
             this.Text = "     Barang";
             this.Load += new System.EventHandler(this.menuBarang_Load);

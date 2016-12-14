@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Application));
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
+            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.SuspendLayout();
             // 
             // label1
@@ -88,16 +89,6 @@
             this.shapeContainer1.TabIndex = 5;
             this.shapeContainer1.TabStop = false;
             // 
-            // rectangleShape1
-            // 
-            this.rectangleShape1.BorderColor = System.Drawing.Color.White;
-            this.rectangleShape1.BorderWidth = 3;
-            this.rectangleShape1.CornerRadius = 7;
-            this.rectangleShape1.Location = new System.Drawing.Point(57, 211);
-            this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(455, 15);
-            this.rectangleShape1.Click += new System.EventHandler(this.rectangleShape1_Click);
-            // 
             // rectangleShape2
             // 
             this.rectangleShape2.BackColor = System.Drawing.Color.White;
@@ -110,6 +101,16 @@
             this.rectangleShape2.Size = new System.Drawing.Size(16, 6);
             this.rectangleShape2.Click += new System.EventHandler(this.rectangleShape1_Click);
             // 
+            // rectangleShape1
+            // 
+            this.rectangleShape1.BorderColor = System.Drawing.Color.White;
+            this.rectangleShape1.BorderWidth = 3;
+            this.rectangleShape1.CornerRadius = 7;
+            this.rectangleShape1.Location = new System.Drawing.Point(57, 211);
+            this.rectangleShape1.Name = "rectangleShape1";
+            this.rectangleShape1.Size = new System.Drawing.Size(455, 15);
+            this.rectangleShape1.Click += new System.EventHandler(this.rectangleShape1_Click);
+            // 
             // Application
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -121,6 +122,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Application";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

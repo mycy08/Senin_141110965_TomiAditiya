@@ -74,9 +74,65 @@ namespace LatihanPos
             
         }
 
+       
+
+
+        string kodebarang, namabarang, hargajual, hargahpp, jlhawal;
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+            
+            
+            DataGridViewRow rows = dataGridView1.Rows[e.RowIndex];
+            kodebarang = rows.Cells[1].Value.ToString();
+            namabarang = rows.Cells[2].Value.ToString();
+            jlhawal = rows.Cells[3].Value.ToString();
+            hargahpp = rows.Cells[4].Value.ToString();
+            hargajual = rows.Cells[5].Value.ToString();
+
+           
+        }
         private void mthapus_Click(object sender, EventArgs e)
         {
+            db_connection();
+            DialogResult pesan;
+            pesan = MessageBox.Show("Anda Yakin ingin menghapus data ini?", "Warning", MessageBoxButtons.YesNo);
+            if (pesan == DialogResult.No)
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
 
+                    MySqlCommand cmd = connect.CreateCommand();
+                    cmd.CommandText = "delete from tblbarang where kodeBarang='" + kodebarang + "'";
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Data Berhasil Dihapus");
+
+
+
+                }
+                catch (Exception)
+                {
+                    throw;
+
+
+                }
+                finally
+                {
+                    if (connect.State == ConnectionState.Open)
+                    {
+                        connect.Close();
+                    }
+                }
+            }
+        }
+        private void mtubah_Click(object sender, EventArgs e)
+        {
+            editBarang edt = new editBarang(kodebarang, namabarang, jlhawal, hargahpp, hargajual);
+            edt.Show();
         }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tambahBarang));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.kodeBarang = new MetroFramework.Controls.MetroTextBox();
             this.namaBarang = new MetroFramework.Controls.MetroTextBox();
@@ -41,18 +41,8 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.SuspendLayout();
-            // 
-            // metroLink1
-            // 
-            this.metroLink1.Image = global::LatihanPos.Properties.Resources._1481676046_circle_back_arrow_glyph;
-            this.metroLink1.ImageSize = 32;
-            this.metroLink1.Location = new System.Drawing.Point(11, 12);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(41, 48);
-            this.metroLink1.TabIndex = 0;
-            this.metroLink1.UseSelectable = true;
-            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
             // 
             // metroLabel1
             // 
@@ -277,6 +267,17 @@
             this.metroButton2.UseSelectable = true;
             this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
+            // metroLink1
+            // 
+            this.metroLink1.Image = global::LatihanPos.Properties.Resources._1481676046_circle_back_arrow_glyph;
+            this.metroLink1.ImageSize = 32;
+            this.metroLink1.Location = new System.Drawing.Point(11, 12);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(41, 48);
+            this.metroLink1.TabIndex = 0;
+            this.metroLink1.UseSelectable = true;
+            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
+            // 
             // tambahBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,6 +296,7 @@
             this.Controls.Add(this.kodeBarang);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroLink1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "tambahBarang";
             this.Text = "     Tambah Barang";

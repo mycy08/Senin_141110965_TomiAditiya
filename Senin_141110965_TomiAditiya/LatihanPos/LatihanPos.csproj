@@ -75,6 +75,12 @@
     <Compile Include="Application.Designer.cs">
       <DependentUpon>Application.cs</DependentUpon>
     </Compile>
+    <Compile Include="editBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editBarang.Designer.cs">
+      <DependentUpon>editBarang.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </Compile>
     <EmbeddedResource Include="Application.resx">
       <DependentUpon>Application.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editBarang.resx">
+      <DependentUpon>editBarang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>

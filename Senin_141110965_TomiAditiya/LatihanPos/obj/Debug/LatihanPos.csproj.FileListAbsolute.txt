@@ -19,3 +19,4 @@ D:\new\Senin_141110965_TomiAditiya\LatihanPos\bin\Debug\MySql.Data.dll
 D:\new\Senin_141110965_TomiAditiya\LatihanPos\obj\Debug\LatihanPos.menuUtama.resources
 D:\new\Senin_141110965_TomiAditiya\LatihanPos\obj\Debug\LatihanPos.menuBarang.resources
 D:\new\Senin_141110965_TomiAditiya\LatihanPos\obj\Debug\LatihanPos.tambahBarang.resources
+D:\new\Senin_141110965_TomiAditiya\LatihanPos\obj\Debug\LatihanPos.editBarang.resources
