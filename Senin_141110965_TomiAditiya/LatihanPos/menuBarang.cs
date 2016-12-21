@@ -11,32 +11,22 @@ using MySql.Data.MySqlClient;
 
 namespace LatihanPos
 {
-    public partial class menuBarang : MetroFramework.Forms.MetroForm
+    public partial class menuBarang :  MetroFramework.Forms.MetroForm 
     {
-        private string conn;
-        private MySqlConnection connect;
+        
+        string kodebarang, namabarang, hargajual, hargahpp, jlhawal;
+        
+        initialiazeDA da = new initialiazeDA();
+        
         public menuBarang()
         {
             InitializeComponent();
-        }
-        private void db_connection()
-        {
-            try
-            {
-                conn = "Server=localhost;Database=posapp;Uid=root;Pwd=;";
-                connect = new MySqlConnection(conn);
-                connect.Open();
-            }
-            catch (MySqlException e)
-            {
-                throw;
-            }
         }
         private void mlback_Click(object sender, EventArgs e)
         {
             menuUtama mn = new menuUtama();
             mn.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void mttambah_Click(object sender, EventArgs e)
@@ -48,53 +38,50 @@ namespace LatihanPos
 
         private void menuBarang_Load(object sender, EventArgs e)
         {
-            db_connection();
-            MySqlCommand cmd = connect.CreateCommand();
-            cmd.CommandText = "SELECT * FROM tblbarang";
-            
-            
             DataSet ds = new DataSet();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(ds, "data");
+           
+            da.db_connection();
+            da.TampilBarang();
+            da.barangDA.SelectCommand.ExecuteScalar();
+            da.barangDA.Fill(ds, "barang");
+            dataGridView1.ReadOnly = true;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.DataSource = ds;
-            dataGridView1.DataMember = "data";
-
-            connect.Close();
+            dataGridView1.DataMember = "barang";
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
         }
         
         private void mlrefresh_Click(object sender, EventArgs e)
         {
-            MySqlCommand cmd = connect.CreateCommand();
-            cmd.CommandText = "SELECT * FROM tblbarang";
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            da.db_connection();
+            da.TampilBarang();
+            da.barangDA.SelectCommand.ExecuteScalar();
             DataTable dt = new DataTable();
-            da.Fill(dt);
+            da.barangDA.Fill(dt);
             dataGridView1.DataSource = dt;
-            connect.Close();
+            da.connect.Close();
             
         }
 
-       
+        private void menuBarang_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            da.connect.Close();
+        }
 
-
-        string kodebarang, namabarang, hargajual, hargahpp, jlhawal;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
-            
-            
             DataGridViewRow rows = dataGridView1.Rows[e.RowIndex];
             kodebarang = rows.Cells[1].Value.ToString();
             namabarang = rows.Cells[2].Value.ToString();
             jlhawal = rows.Cells[3].Value.ToString();
             hargahpp = rows.Cells[4].Value.ToString();
-            hargajual = rows.Cells[5].Value.ToString();
-
-           
+            hargajual = rows.Cells[5].Value.ToString();   
         }
         private void mthapus_Click(object sender, EventArgs e)
         {
-            db_connection();
+            da.db_connection();
             DialogResult pesan;
             pesan = MessageBox.Show("Anda Yakin ingin menghapus data ini?", "Warning", MessageBoxButtons.YesNo);
             if (pesan == DialogResult.No)
@@ -105,10 +92,9 @@ namespace LatihanPos
             {
                 try
                 {
-
-                    MySqlCommand cmd = connect.CreateCommand();
-                    cmd.CommandText = "delete from tblbarang where kodeBarang='" + kodebarang + "'";
-                    cmd.ExecuteNonQuery();
+                    
+                    da.Barang(kodebarang, namabarang,jlhawal, hargahpp, hargajual, 2);
+                    da.insertBarang.ExecuteNonQuery();
                     MessageBox.Show("Data Berhasil Dihapus");
 
 
@@ -122,9 +108,9 @@ namespace LatihanPos
                 }
                 finally
                 {
-                    if (connect.State == ConnectionState.Open)
+                    if (da.connect.State == ConnectionState.Open)
                     {
-                        connect.Close();
+                        da.connect.Close();
                     }
                 }
             }

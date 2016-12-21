@@ -81,6 +81,13 @@
     <Compile Include="editBarang.Designer.cs">
       <DependentUpon>editBarang.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCustomer.Designer.cs">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="initialiazeDA.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +99,12 @@
     </Compile>
     <Compile Include="menuBarang.Designer.cs">
       <DependentUpon>menuBarang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="menuCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menuCustomer.Designer.cs">
+      <DependentUpon>menuCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="menuUtama.cs">
       <SubType>Form</SubType>
@@ -107,17 +120,29 @@
     <Compile Include="tambahBarang.Designer.cs">
       <DependentUpon>tambahBarang.cs</DependentUpon>
     </Compile>
+    <Compile Include="tambahCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tambahCustomer.Designer.cs">
+      <DependentUpon>tambahCustomer.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Application.resx">
       <DependentUpon>Application.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editBarang.resx">
       <DependentUpon>editBarang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditCustomer.resx">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menuBarang.resx">
       <DependentUpon>menuBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menuCustomer.resx">
+      <DependentUpon>menuCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="menuUtama.resx">
       <DependentUpon>menuUtama.cs</DependentUpon>
@@ -134,6 +159,9 @@
     </Compile>
     <EmbeddedResource Include="tambahBarang.resx">
       <DependentUpon>tambahBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tambahCustomer.resx">
+      <DependentUpon>tambahCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

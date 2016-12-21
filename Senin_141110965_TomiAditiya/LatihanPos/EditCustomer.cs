@@ -7,32 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace LatihanPos
 {
-    public partial class editBarang : MetroFramework.Forms.MetroForm
+    public partial class EditCustomer : MetroFramework.Forms.MetroForm
     {
         initialiazeDA da = new initialiazeDA();
-        public editBarang()
+        public EditCustomer()
         {
             InitializeComponent();
         }
-
-        public editBarang(string kode,string nama,string jlh,string hpp,string jual)
+        public EditCustomer(string cust, string namacs, string alamatcs, string kodeposcs, string emailcs,string nohpcs)
 
         : this(){
-
-            kodeBarang.Text = kode;
-            namaBarang.Text = nama;
-            jlhAwal.Text = jlh;
-            hargaHPP.Text = hpp;
-            hargaJual.Text = jual;
-
+            idcust.Text = cust;
+            nama.Text = namacs;
+            alamat.Text = alamatcs;
+            kodepos.Text = kodeposcs;
+            email.Text = emailcs;
+            nohp.Text = nohpcs;
         }
-        private void editBarang_Load(object sender, EventArgs e)
-        {
 
+        private void metroLink1_Click(object sender, EventArgs e)
+        {
+            menuBarang mnb = new menuBarang();
+            mnb.Show();
+            this.Close();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -40,10 +40,10 @@ namespace LatihanPos
             try
             {
                 da.db_connection();
-                da.Barang(kodeBarang.Text, namaBarang.Text, jlhAwal.Text, hargaHPP.Text, hargaJual.Text, 1);
-                da.insertBarang.ExecuteNonQuery();
+                da.Customer(idcust.Text, nama.Text, alamat.Text, kodepos.Text, email.Text,nohp.Text, 1);
+                da.insertCustomer.ExecuteNonQuery();
                 MessageBox.Show("1 Record telah di Edit");
-                this.Close();
+                
 
 
             }
@@ -52,21 +52,21 @@ namespace LatihanPos
                 throw;
 
 
+
             }
             finally
             {
                 if (da.connect.State == ConnectionState.Open)
                 {
                     da.connect.Close();
+                    this.Close();
                 }
             }
         }
 
-        private void metroLink1_Click(object sender, EventArgs e)
+        private void EditCustomer_Load(object sender, EventArgs e)
         {
-            menuBarang mnb = new menuBarang();
-            mnb.Show();
-            this.Hide();
+
         }
     }
 }
