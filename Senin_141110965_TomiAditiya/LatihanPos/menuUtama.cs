@@ -27,7 +27,13 @@ namespace LatihanPos
         {
             menuBarang mnb = new menuBarang();
             mnb.Show();
-            this.Hide();
+            this.Close();
+        }
+        private void customer_Click(object sender, EventArgs e)
+        {
+            menuCustomer mnc = new menuCustomer();
+            mnc.Show();
+            this.Close();
         }
     }
 }
