@@ -14,8 +14,8 @@ namespace LatihanPos
     public partial class menuBarang :  MetroFramework.Forms.MetroForm 
     {
         
-        string kodebarang, namabarang, hargajual, hargahpp, jlhawal;
-        
+        string kodebarang,idsuplier, namabarang, hargajual, hargahpp, jlhawal;
+        DataTable dt;
         initialiazeDA da = new initialiazeDA();
         
         public menuBarang()
@@ -38,17 +38,17 @@ namespace LatihanPos
 
         private void menuBarang_Load(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
-           
+            dt = new DataTable();
+
             da.db_connection();
             da.TampilBarang();
             da.barangDA.SelectCommand.ExecuteScalar();
-            da.barangDA.Fill(ds, "barang");
+            da.barangDA.Fill(dt);
+            dataGridView1.DataSource = dt;
             dataGridView1.ReadOnly = true;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.DataSource = ds;
-            dataGridView1.DataMember = "barang";
+            
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
         }
@@ -58,10 +58,20 @@ namespace LatihanPos
             da.db_connection();
             da.TampilBarang();
             da.barangDA.SelectCommand.ExecuteScalar();
-            DataTable dt = new DataTable();
+            dt = new DataTable();
             da.barangDA.Fill(dt);
             dataGridView1.DataSource = dt;
             da.connect.Close();
+            
+        }
+
+        private void cari_TextChanged(object sender, EventArgs e)
+        {
+            DataView dv = new DataView(dt);
+            dv.RowFilter = "kodeBarang like '%" + cari.Text + "%' or namaBarang like '%" + cari.Text + "%'";
+            
+            dataGridView1.DataSource = dv;
+            
             
         }
 
@@ -74,10 +84,11 @@ namespace LatihanPos
         {
             DataGridViewRow rows = dataGridView1.Rows[e.RowIndex];
             kodebarang = rows.Cells[1].Value.ToString();
-            namabarang = rows.Cells[2].Value.ToString();
-            jlhawal = rows.Cells[3].Value.ToString();
-            hargahpp = rows.Cells[4].Value.ToString();
-            hargajual = rows.Cells[5].Value.ToString();   
+            idsuplier = rows.Cells[2].Value.ToString();
+            namabarang = rows.Cells[3].Value.ToString();
+            jlhawal = rows.Cells[4].Value.ToString();
+            hargahpp = rows.Cells[5].Value.ToString();
+            hargajual = rows.Cells[6].Value.ToString();   
         }
         private void mthapus_Click(object sender, EventArgs e)
         {
@@ -92,11 +103,15 @@ namespace LatihanPos
             {
                 try
                 {
-                    
-                    da.Barang(kodebarang, namabarang,jlhawal, hargahpp, hargajual, 2);
+                    da.db_connection();
+                    da.Barang(kodebarang,idsuplier, namabarang,jlhawal, hargahpp, hargajual, 2);
                     da.insertBarang.ExecuteNonQuery();
                     MessageBox.Show("Data Berhasil Dihapus");
-
+                    dt = new DataTable();
+                    da.TampilBarang();
+                    da.barangDA.SelectCommand.ExecuteScalar();
+                    da.barangDA.Fill(dt);
+                    dataGridView1.DataSource = dt;
 
 
                 }
@@ -117,7 +132,7 @@ namespace LatihanPos
         }
         private void mtubah_Click(object sender, EventArgs e)
         {
-            editBarang edt = new editBarang(kodebarang, namabarang, jlhawal, hargahpp, hargajual);
+            editBarang edt = new editBarang(kodebarang,idsuplier, namabarang, jlhawal, hargahpp, hargajual);
             edt.Show();
         }
     }

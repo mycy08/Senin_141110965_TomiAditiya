@@ -27,12 +27,34 @@ namespace LatihanPos
         {
             menuBarang mnb = new menuBarang();
             mnb.Show();
-            this.Close();
+            this.Hide();
         }
+
         private void customer_Click(object sender, EventArgs e)
         {
             menuCustomer mnc = new menuCustomer();
             mnc.Show();
+            this.Close();
+        }
+
+        private void supplier_Click(object sender, EventArgs e)
+        {
+            menuSuplier mns = new menuSuplier();
+            mns.Show();
+            this.Close();
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            penjualan jual = new penjualan();
+            jual.Show();
+            this.Close();
+        }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+            pembelian beli = new pembelian();
+            beli.Show();
             this.Close();
         }
     }

@@ -93,6 +93,26 @@ namespace LatihanPos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1482448285_Search {
+            get {
+                object obj = ResourceManager.GetObject("1482448285_Search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1482448658_circle_edit_search_thin {
+            get {
+                object obj = ResourceManager.GetObject("1482448658_circle-edit-search-thin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap back_icon {
             get {
                 object obj = ResourceManager.GetObject("back-icon", resourceCulture);
@@ -116,6 +136,36 @@ namespace LatihanPos.Properties {
         internal static System.Drawing.Bitmap box_download_icon {
             get {
                 object obj = ResourceManager.GetObject("box-download-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap box_download_icon_ {
+            get {
+                object obj = ResourceManager.GetObject("box-download-icon.", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cash_icon {
+            get {
+                object obj = ResourceManager.GetObject("Cash-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete_icon {
+            get {
+                object obj = ResourceManager.GetObject("Delete-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +223,39 @@ namespace LatihanPos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Misc_Delete_Database_icon {
+            get {
+                object obj = ResourceManager.GetObject("Misc-Delete-Database-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap red_button00 {
             get {
                 object obj = ResourceManager.GetObject("red_button00", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Shop_icon {
+            get {
+                object obj = ResourceManager.GetObject("Shop-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Shopping_basket_add_icon {
+            get {
+                object obj = ResourceManager.GetObject("Shopping-basket-add-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
